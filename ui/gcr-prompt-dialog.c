@@ -27,7 +27,7 @@
 #include "gcr-secure-entry-buffer.h"
 
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
+//#include <gdk/gdkx.h>  CHB
 #include <glib/gi18n.h>
 
 /**
@@ -148,7 +148,7 @@ update_transient_for (GcrPromptDialog *self)
 	}
 
 	display = gtk_widget_get_display (GTK_WIDGET (self));
-	transient_for = gdk_x11_window_foreign_new_for_display (display, (Window)handle);
+	//transient_for = gdk_x11_window_foreign_new_for_display (display, (Window)handle);  CHB
 	if (transient_for == NULL) {
 		g_warning ("caller-window property doesn't represent a window on current display: %s",
 		           self->pv->caller_window);

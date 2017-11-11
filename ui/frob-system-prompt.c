@@ -26,7 +26,7 @@
 #include "egg/egg-testing.h"
 
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
+//#include <gdk/gdkx.h>  CHB
 
 #include <unistd.h>
 #include <string.h>

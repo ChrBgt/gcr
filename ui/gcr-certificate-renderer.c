@@ -607,6 +607,7 @@ static void
 gcr_certificate_renderer_populate_popup (GcrRenderer *self, GcrViewer *viewer,
                                          GtkMenu *menu)
 {
+	/*CHB
 	GtkWidget *item;
 
 	item = gtk_separator_menu_item_new ();
@@ -618,6 +619,7 @@ gcr_certificate_renderer_populate_popup (GcrRenderer *self, GcrViewer *viewer,
 	g_signal_connect_data (item, "activate", G_CALLBACK (on_certificate_export),
 	                       g_object_ref (self), (GClosureNotify)g_object_unref, 0);
 	gtk_menu_shell_prepend (GTK_MENU_SHELL (menu), item);
+	*/
 }
 
 static void

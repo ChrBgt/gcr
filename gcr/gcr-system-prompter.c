@@ -38,7 +38,7 @@
 #include <string.h>
 
 //CHB test
-#define g_debug g_printerr
+//#define g_debug g_printerr
 
 /**
  * SECTION:gcr-system-prompter
@@ -347,10 +347,10 @@ gcr_system_prompter_finalize (GObject *obj)
 static GcrPrompt *
 gcr_system_prompter_new_prompt (GcrSystemPrompter *self)
 {
-	g_debug ("gcr_system_prompter_new_prompt... "); //CHB test
+	//g_debug ("gcr_system_prompter_new_prompt... "); //CHB test
 	g_return_val_if_fail (self->pv->prompt_type != 0, NULL);
 
-	g_debug ("gcr_system_prompter_new_prompt: creating new %s prompt", g_type_name (self->pv->prompt_type)); //CHB test: gcr_system_prompter_new_prompt added
+	//g_debug ("gcr_system_prompter_new_prompt: creating new %s prompt", g_type_name (self->pv->prompt_type)); //CHB test: gcr_system_prompter_new_prompt added
 
 	return g_object_new (self->pv->prompt_type, NULL);
 }
@@ -361,7 +361,7 @@ gcr_system_prompter_new_prompt_acculmulator (GSignalInvocationHint *ihint,
                                              const GValue *handler_return,
                                              gpointer user_data)
 {
-	g_debug ("gcr_system_prompter_new_prompt_acculmulator... "); //CHB test
+	//g_debug ("gcr_system_prompter_new_prompt_acculmulator... "); //CHB test
 	if (g_value_get_object (handler_return) != NULL) {
 		g_value_copy (handler_return, return_accu);
 		return FALSE;
@@ -935,25 +935,25 @@ prompter_method_perform_prompt (GcrSystemPrompter *self,
 		active->ready = FALSE;
 		g_debug ("starting confirm prompt for callback %s@%s",
 		         lookup.path, lookup.name);
-		/*CHB test
+		/*CHB
 		gcr_prompt_confirm_async (active->prompt, active->cancellable,
 		                          on_prompt_confirm, active_prompt_ref (active));
         */
-		//CHB test
+		//CHB
 		prompt_send_ready (active, GCR_DBUS_PROMPT_REPLY_YES, NULL);
-		//eof CHB test
+		//eof CHB
 	} else if (g_strcmp0 (type, GCR_DBUS_PROMPT_TYPE_PASSWORD) == 0) {
 		active->ready = FALSE;
 		g_debug ("starting password prompt for callback %s@%s",
 		         lookup.path, lookup.name);
-		/*CHB test
+		/*CHB
 		gcr_prompt_password_async (active->prompt, active->cancellable,
 		                           on_prompt_password, active_prompt_ref (active));
         */
-		//CHB test
+		//CHB
 		prompt_send_ready (active, "yes", "");
 		//active_prompt_unref (active);
-		//eof CHB test
+		//eof CHB
 	} else {
 		g_debug ("invalid type of prompt from callback %s@%s",
 		         lookup.path, lookup.name);
@@ -1116,15 +1116,15 @@ GcrSystemPrompter *
 gcr_system_prompter_new (GcrSystemPrompterMode mode,
                          GType prompt_type)
 {
-	g_debug ("gcr_system_prompter_new... "); //CHB test
+	//g_debug ("gcr_system_prompter_new... "); //CHB test
 	if (prompt_type == 0) {
-		g_debug ("gcr_system_prompter_new: mode only ... "); //CHB test
+		//g_debug ("gcr_system_prompter_new: mode only ... "); //CHB test
 		return g_object_new (GCR_TYPE_SYSTEM_PROMPTER,
 		                     "mode", mode,
 		                     NULL);
 
 	} else {
-		g_debug ("gcr_system_prompter_new: mode & prompt-type ... "); //CHB test
+		//g_debug ("gcr_system_prompter_new: mode & prompt-type ... "); //CHB test
 		return g_object_new (GCR_TYPE_SYSTEM_PROMPTER,
 		                     "mode", mode,
 		                     "prompt-type", prompt_type,

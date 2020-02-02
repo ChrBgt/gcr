@@ -134,8 +134,8 @@ ensure_measurements (GcrDisplayView *self)
 		self->pv->natural_height = extents.height * 9;
 	}
 
-	self->pv->minimal_width = icon_width + (extents.width * 5);
-	self->pv->natural_width = icon_width + (extents.width * 8);
+	self->pv->minimal_width = icon_width + (extents.width * 5)/2.5; //CHB  /2.5 added
+	self->pv->natural_width = icon_width + (extents.width * 8)/2;   //CHB  /2   added
 	self->pv->have_measurements = TRUE;
 }
 

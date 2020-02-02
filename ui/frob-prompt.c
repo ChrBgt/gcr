@@ -25,7 +25,7 @@
 #include "gcr/gcr-base.h"
 
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
+//#include <gdk/gdkx.h>  CHB
 
 #include <err.h>
 

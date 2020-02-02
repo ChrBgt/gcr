@@ -27,7 +27,7 @@
 
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
-#include <gdk/gdkx.h>
+//#include <gdk/gdkx.h>   CHB
 #include <pango/pango.h>
 
 #include <locale.h>
@@ -36,6 +36,9 @@
 #include <syslog.h>
 
 #define QUIT_TIMEOUT 10
+
+//CHB test
+#define g_debug g_printerr
 
 static GcrSystemPrompter *the_prompter = NULL;
 static gboolean registered_prompter = FALSE;

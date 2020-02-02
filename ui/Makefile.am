@@ -296,11 +296,11 @@ noinst_PROGRAMS += \
 	frob-import-button \
 	frob-key \
 	frob-tree-selector \
-	frob-prompt \
 	frob-request \
-	frob-system-prompt \
 	frob-unlock \
 	frob-unlock-options
+#        frob-prompt \    CHB
+#        frob-system-prompt \     CHB
 
 frob_certificate_SOURCES = ui/frob-certificate.c
 frob_certificate_CFLAGS = $(ui_CFLAGS)
